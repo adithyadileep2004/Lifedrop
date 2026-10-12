@@ -1,0 +1,307 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #b5121b;
+    padding: 15px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffd6d6;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 480px;
+    background: linear-gradient(
+        rgba(95, 0, 0, 0.78),
+        rgba(181, 18, 27, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #b5121b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero .btn {
+    background-color: white;
+    color: #b5121b;
+}
+
+.btn:hover {
+    background-color: #800000;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Common Sections */
+.section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: #b5121b;
+    margin-bottom: 20px;
+}
+
+.section > p {
+    max-width: 850px;
+    margin: 0 auto 25px;
+}
+
+/* Information Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background-color: #fff5f5;
+    padding: 28px 20px;
+    border-radius: 12px;
+    border-bottom: 4px solid #b5121b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.13);
+}
+
+.card h3 {
+    color: #b5121b;
+    margin-bottom: 12px;
+}
+
+/* Blood Groups */
+.blood-section {
+    background-color: #fff3f3;
+}
+
+.blood-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 18px;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.blood-card {
+    background-color: #b5121b;
+    color: white;
+    padding: 22px 10px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.blood-card:hover {
+    background-color: #800000;
+    transform: scale(1.05);
+}
+
+.note {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Eligibility */
+.eligibility {
+    background-color: #f8f8f8;
+}
+
+.eligibility ul {
+    display: inline-block;
+    text-align: left;
+    margin: 20px auto;
+    padding-left: 25px;
+}
+
+.eligibility li {
+    margin-bottom: 12px;
+}
+
+/* Registration Form */
+.register-section {
+    background-color: #fff3f3;
+}
+
+.donor-form {
+    max-width: 550px;
+    margin: 30px auto 0;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.donor-form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+}
+
+.donor-form input,
+.donor-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.donor-form input:focus,
+.donor-form select:focus {
+    outline: 2px solid #b5121b;
+    border-color: #b5121b;
+}
+
+.donor-form button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.form-note {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #2b1717;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer h3 {
+    color: #ff6b6b;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+
+    .section h2 {
+        font-size: 27px;
+    }
+
+    .donor-form {
+        padding: 20px;
+    }
+}

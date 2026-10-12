@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeDrop | Blood Donation Awareness</title>
+
+    <link rel="stylesheet" href="blooddonate.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">🩸 LifeDrop</h1>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#groups">Blood Groups</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="registered.html">Donor List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+
+            <h2>Donate Blood, Save Lives!</h2>
+
+            <p>
+                Your one donation can make a big difference.
+                Be a hero and help save lives through blood donation.
+            </p>
+
+            <a href="#register" class="btn">Become a Donor</a>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+
+        <h2>Why Is Blood Donation Important?</h2>
+
+        <p>
+            Blood donation is a voluntary act of giving blood to help people
+            who need transfusions. Donated blood can help patients undergoing
+            surgery, people injured in accidents, and individuals receiving
+            treatment for certain medical conditions.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>❤️ Save Lives</h3>
+                <p>
+                    Donated blood helps patients who need blood transfusions.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🤝 Help Others</h3>
+                <p>
+                    Voluntary donation is a meaningful way to support your community.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌍 Spread Awareness</h3>
+                <p>
+                    Encourage others to learn about safe and voluntary blood donation.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Blood Groups Section -->
+    <section id="groups" class="section blood-section">
+
+        <h2>Know Your Blood Group</h2>
+
+        <p>
+            There are eight common blood types in the ABO and Rh classification.
+        </p>
+
+        <div class="blood-groups">
+
+            <div class="blood-card">A+</div>
+            <div class="blood-card">A−</div>
+            <div class="blood-card">B+</div>
+            <div class="blood-card">B−</div>
+            <div class="blood-card">AB+</div>
+            <div class="blood-card">AB−</div>
+            <div class="blood-card">O+</div>
+            <div class="blood-card">O−</div>
+
+        </div>
+
+        <p class="note">
+            Blood compatibility depends on the type of transfusion and
+            clinical testing. Always consult qualified medical professionals.
+        </p>
+
+    </section>
+
+    <!-- Donation Process -->
+    <section id="process" class="section">
+
+        <h2>How Does Blood Donation Work?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>01. Registration</h3>
+                <p>
+                    Register your interest at an authorized blood donation centre.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>02. Health Screening</h3>
+                <p>
+                    Trained staff check your health and determine whether
+                    you are eligible to donate.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>03. Donation</h3>
+                <p>
+                    Qualified staff collect blood using sterile equipment.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>04. Recovery</h3>
+                <p>
+                    Follow the staff's advice, rest, and take refreshments
+                    before leaving.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility section">
+
+        <h2>Who Can Donate Blood?</h2>
+
+        <p>
+            Eligibility depends on age, weight, health, medical history,
+            and local blood donation guidelines.
+        </p>
+
+        <ul>
+            <li>Meet the applicable age and weight requirements.</li>
+            <li>Be in suitable health on the day of donation.</li>
+            <li>Answer health screening questions honestly.</li>
+            <li>Follow the instructions of qualified donation staff.</li>
+        </ul>
+
+        <p>
+            Final eligibility is determined by the authorized blood donation centre.
+        </p>
+
+    </section>
+
+    <!-- Donor Registration Form -->
+    <section id="register" class="section register-section">
+
+        <h2>Become a LifeSaver ❤️</h2>
+
+        <p>
+            Interested in donating blood? Fill in this sample registration form.
+        </p>
+
+        <!-- Corrected Form -->
+        <form class="donor-form" id="donorForm">
+
+            <label for="name">Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="phone">Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                inputmode="numeric"
+                title="Enter a 10-digit phone number"
+                required
+            >
+
+            <label for="blood">Blood Group</label>
+
+            <select id="blood" name="blood" required>
+
+                <option value="">Select your blood group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A−</option>
+                <option value="B+">B+</option>
+                <option value="B-">B−</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB−</option>
+                <option value="O+">O+</option>
+                <option value="O-">O−</option>
+                <option value="Unknown">I don't know</option>
+
+            </select>
+
+            <label for="city">City</label>
+
+            <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Enter your city"
+                required
+            >
+
+            <button type="submit" class="btn">
+                Submit Registration
+            </button>
+
+            <p class="form-note">
+                This is a demonstration form. Your information will not be
+                saved or sent to a blood donation centre.
+            </p>
+
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" hidden>
+
+            <h3>❤️ Thank You for Your Interest!</h3>
+
+            <p>
+                Your demonstration registration was successful.
+                Thank you for supporting blood donation awareness.
+            </p>
+
+            <button type="button" id="registerAgain" class="btn">
+                Register Again
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>🩸 LifeDrop</h3>
+
+        <p>Every Drop Counts. Every Donor Matters.</p>
+
+        <p>
+            &copy; 2026 LifeDrop Blood Donation Awareness Project.
+        </p>
+
+    </footer>
+
+    <!-- JavaScript to Handle Form Submission -->
+<script>
+const donorForm = document.getElementById("donorForm");
+const successMessage = document.getElementById("successMessage");
+
+donorForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get existing donor records
+    let donors = JSON.parse(
+        localStorage.getItem("lifedropDonors") || "[]"
+    );
+
+    // Get information from the form
+    const donor = {
+        id: Date.now(),
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        blood: document.getElementById("blood").value,
+        city: document.getElementById("city").value
+    };
+
+    // Add donor to the list
+    donors.push(donor);
+
+    // Save donor list
+    localStorage.setItem(
+        "lifedropDonors",
+        JSON.stringify(donors)
+    );
+
+    // Show success message
+    donorForm.hidden = true;
+    successMessage.hidden = false;
+
+    donorForm.reset();
+});
+</script>
+
+</body>
+</html>
