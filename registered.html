@@ -22,6 +22,32 @@
             color: #c62828;
         }
 
+        .donor-count {
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .print-btn {
+            background-color: #c62828;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .print-btn:hover {
+            background-color: #a31515;
+        }
+
         .donor-table {
             width: 100%;
             border-collapse: collapse;
@@ -65,6 +91,72 @@
             text-align: center;
             margin-top: 25px;
         }
+
+        /* Print settings */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-family: Arial, sans-serif;
+            }
+
+            .donor-list {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: visible;
+            }
+
+            .donor-list h1 {
+                color: black !important;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .button-container,
+            .delete-btn,
+            .back-link {
+                display: none !important;
+            }
+
+            .donor-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                font-size: 11px;
+            }
+
+            .donor-table th,
+            .donor-table td {
+                border: 1px solid black !important;
+                padding: 8px;
+                color: black !important;
+                overflow-wrap: anywhere;
+            }
+
+            .donor-table th {
+                background: #eeeeee !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .donor-table tr {
+                break-inside: avoid;
+            }
+
+            .donor-count {
+                color: black !important;
+            }
+
+            #emptyMessage {
+                color: black !important;
+            }
+        }
+
+        @page {
+            size: A4 landscape;
+            margin: 12mm;
+        }
     </style>
 </head>
 
@@ -74,7 +166,18 @@
 
         <h1>LifeDrop Registered Donors</h1>
 
-        <p id="donorCount">Total registered donors: 0</p>
+        <p id="donorCount" class="donor-count">
+            Total registered donors: 0
+        </p>
+
+        <div class="button-container">
+            <button
+                type="button"
+                class="print-btn"
+                onclick="window.print()">
+                🖨️ Print Donor List
+            </button>
+        </div>
 
         <table class="donor-table">
 
@@ -85,7 +188,7 @@
                     <th>Phone</th>
                     <th>Blood Group</th>
                     <th>City</th>
-                    <th>Action</th>
+                    <th class="action-heading">Action</th>
                 </tr>
             </thead>
 
@@ -146,19 +249,27 @@
                 });
 
                 const actionCell = document.createElement("td");
+                actionCell.className = "action-cell";
 
                 const deleteButton =
                     document.createElement("button");
 
                 deleteButton.textContent = "Delete";
                 deleteButton.className = "delete-btn";
+                deleteButton.type = "button";
 
                 deleteButton.addEventListener("click", function() {
 
                     if (confirm("Delete this donor record?")) {
 
-                        const updatedDonors = donors.filter(
-                            item => item.id !== donor.id
+                        const currentDonors = JSON.parse(
+                            localStorage.getItem("lifedropDonors") || "[]"
+                        );
+
+                        const updatedDonors = currentDonors.filter(
+                            function(item) {
+                                return item.id !== donor.id;
+                            }
                         );
 
                         localStorage.setItem(
@@ -174,13 +285,25 @@
                 row.appendChild(actionCell);
 
                 tableBody.appendChild(row);
-
             });
         }
+
+        // Hide the Action column when printing
+        const printStyle = document.createElement("style");
+
+        printStyle.textContent = `
+            @media print {
+                .action-heading,
+                .action-cell {
+                    display: none !important;
+                }
+            }
+        `;
+
+        document.head.appendChild(printStyle);
 
         displayDonors();
     </script>
 
 </body>
-
 </html>
